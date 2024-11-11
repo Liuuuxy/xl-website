@@ -144,20 +144,12 @@
                   <td style="padding: 20px; width: 25%; vertical-align: middle">
                     <div class="one">
                       <div class="two" id="actionpred_image">
-                        <video
-                          muted
-                          autoplay
-                          loop
+                        <img
+                          src="images/atten_map.png"
                           style="width: auto; height: auto; max-width: 100%"
-                        >
-                          <source
-                            src="images/liver_deform.mp4"
-                            type="video/mp4"
-                          />
-                          Your browser does not support the video tag.
-                        </video>
+                        />
                       </div>
-                      <img src="images/liver.png" width="100%" />
+                      <img src="images/atten_map.png" width="100%" />
                     </div>
                     <script type="text/javascript">
                       function actionpred_start() {
@@ -180,7 +172,10 @@
                       >
                     </a>
                     <br />
-                    <strong>Xinyuan Liu, John Han</strong>
+                    <strong
+                      >Xinyuan Liu, John Han, Jumanh Atoum1, Nicholas Kavoussi2,
+                      Jie Ying Wu</strong
+                    >
                     <br />
                     <em>RA-L</em> (In Progress)
                     <br />
@@ -188,7 +183,10 @@
                     /
                     <a href="#">publication</a>
                     <p></p>
-                    <p></p>
+                    <p>
+                      A GPT-based next-token prediction model using visual data
+                      and kinematics for accurate future pose prediction
+                    </p>
                   </td>
                 </tr>
 
@@ -328,23 +326,23 @@
                   </td>
                 </tr>
 
-                <tr onmouseout="bigdata_stop()" onmouseover="bigdata_start()">
+                <tr onmouseout="lung_stop()" onmouseover="lung_start()">
                   <td style="padding: 20px; width: 25%; vertical-align: middle">
                     <div class="one">
-                      <div class="two" id="bigdata_image">
-                        <img src="images/bigdata_project.jpg" width="160" />
+                      <div class="two" id="lung_image">
+                        <img src="images/lung.png" width="160" />
                       </div>
                     </div>
                     <script type="text/javascript">
-                      function bigdata_start() {
-                        document.getElementById("bigdata_image").style.opacity =
+                      function lung_start() {
+                        document.getElementById("lung_image").style.opacity =
                           "1";
                       }
-                      function bigdata_stop() {
-                        document.getElementById("bigdata_image").style.opacity =
+                      function lung_stop() {
+                        document.getElementById("lung_image").style.opacity =
                           "0";
                       }
-                      bigdata_stop();
+                      lung_stop();
                     </script>
                   </td>
                   <td style="padding: 20px; width: 75%; vertical-align: middle">
