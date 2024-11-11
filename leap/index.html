@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>Surgical Training Simulator</title>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      property="og:image"
+      content="https://jonbarron.info/zipnerf/img/nottingham.jpg"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1296" />
+    <meta property="og:image:height" content="840" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jonbarron.info/zipnerf/" />
+    <meta
+      property="og:title"
+      content="Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields"
+    />
+    
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/video_comparison.js"></script>
+  </head>
+
+  <body>
+    <div class="container" id="main">
+      <div class="row">
+        <h2 class="col-md-12 text-center">
+          <b>Be My Eyes</b>: Visual Question Answering with CLIP
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <ul class="list-inline">
+            <li>
+              <a href="mailto:xl121@rice.edu">Xinyuan Liu</a>
+            </li>
+            <li>
+              <a href="mailto:xy50@rice.edu">Xuan Yu</a>
+            </li>
+            <li>
+              <a href="mailto:zw76@rice.edu">Ziyang Wang</a>
+            </li>
+            <br />Department of Computer Science, Rice University
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a href="https://arxiv.org/abs/2304.06706">
+                    <image src="img/report_image.png" height="60px">
+                        <h4><strong>Report</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/jonbarron/camp_zipnerf">
+                    <image src="img/github.png" height="60px">
+                        <h4><strong>Code</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://vizwiz.org/tasks-and-datasets/vqa/">
+                    <image src="img/database_icon.png" height="60px">
+                        <h4><strong>Data</strong></h4>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_camp_zipnerf.ipynb">
+                    <image src="img/VertexAI-512-color.webp" height="60px">
+                        <h4><strong>Google Vertex AI Notebook</strong></h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+</div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <img src="img/vqa.png" width="100%">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h3>Abstract</h3>
+          <p class="text-justify">
+            This project proposes the development of an AI-based application, called Be my eyes, designed to assist visually impaired individuals in understanding images by answering questions about them. The proposed solution leverages the CLIP-Linear Visual Question Answering (VQA) Model, which integrates the Contrastive Language-Image Pre-training (CLIP) framework with a linear model for answer prediction. The model was trained and evaluated using the VizWiz-VQA dataset, demonstrating competitive performance with top-1 and top-3 accuracy metrics comparable to the leading participants in the VizWiz-VQA challenge, but with significantly lower computational requirements. The lightweight nature of this model facilitates deployment on portable devices, enhancing accessibility and independence for visually impaired users.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>Model Overview</h3>
+            <img src="img/model_diagram.png" class="img-responsive center-block" alt="CLIP-Linear Model Architecture">
+            <p class="text-justify">
+                The CLIP+Linear model processes images and natural language questions, encoding them into high-dimensional features. A lightweight MLP classifier outputs the predicted answer, providing rapid and accurate responses for visually impaired users.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>Table of Results</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Top-1 Accuracy</th>
+                        <th>Top-3 Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CLIP+Linear</td>
+                        <td>31.3%</td>
+                        <td>56.6%</td>
+                    </tr>
+                    <tr>
+                        <td>CLIP+LSTM</td>
+                        <td>33.15%</td>
+                        <td>47.95%</td>
+                    </tr>
+                    <tr>
+                        <td>Zero-shot CLIP</td>
+                        <td>0.00%</td>
+                        <td>0.04%</td>
+                    </tr>
+                    <tr>
+                        <td>VILT</td>
+                        <td>25.2%</td>
+                        <td>38.2%</td>
+                    </tr>
+                    <tr>
+                        <td>KTLO-top1</td>
+                        <td>-</td>
+                        <td>57.72%</td>
+                    </tr>
+                    <tr>
+                        <td>UIO-top2</td>
+                        <td>-</td>
+                        <td>57.27%</td>
+                    </tr>
+                    <tr>
+                        <td>Katya-top3</td>
+                        <td>-</td>
+                        <td>54.76%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-justify">Table 1 shows the performance comparison of our CLIP+Linear model with other models, highlighting its competitive accuracy on the VizWiz-VQA dataset.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>Sample Images and Predictions</h3>
+            <img src="img/res.png" class="img-responsive center-block" alt="Sample predictions with images">
+            <p class="text-justify">This figure shows sample images, questions, ground truth answers, and the top-3 predictions made by the model, highlighting the model's ability to provide accurate results for various types of questions.</p>
+        </div>
+    </div>
+
+      <!-- <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h3>Citation</h3>
+          <div class="form-group col-md-10 col-md-offset-1">
+            <textarea id="bibtex" class="form-control" readonly>
+@article{liu2024bemyeyes,
+    title={Be My Eyes: Visual Question Answering with CLIP},
+    author={Xinyuan Liu, Xuan Yu, Ziyang Wang},
+    journal={Project Report},
+    year={2024}
+}</textarea
+            >
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </body>
+</html>
